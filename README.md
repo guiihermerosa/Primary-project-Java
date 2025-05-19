@@ -39,13 +39,13 @@ Primary-project-Java/
 ## 📌 Funcionalidades
  Implementação de classes e objetos
 
- Manipulação de estruturas de dados
+- Manipulação de estruturas de dados
 
- Interação com o usuário via console
+- Interação com o usuário via console
 
- Tratamento de exceções
+- Tratamento de exceções
 
-(Atualize esta seção conforme novas funcionalidades forem adicionadas.)
+
 
 ## 📄 Licença
 Este projeto está sob a licença MIT.
