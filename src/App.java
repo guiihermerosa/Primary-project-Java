@@ -1,50 +1,50 @@
-package src;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-public class App{
-    /**
-     * @param args
-     * @throws Exception
-     */
-    public static void main(String[] args) throws Exception {
-        // Create jFrame  
-        JFrame janela = new JFrame();
-        // Create jButton
-           JLabel labelUsuario = new JLabel("Usuario");
-          JButton botao = new JButton("Click me");
-          JTextField textField = new JTextField();
-          textField.setBounds(100, 200, 200, 30);
-          botao.setBounds(100, 300, 200, 30);
-          labelUsuario.setBounds(100, 150, 200, 30);
-         
-         botao.addActionListener(new ActionListener() {   
-            @Override
-            public void actionPerformed(ActionEvent e) {
-              // TODO Auto-generated method stub
-              System.out.println("Button clicked!");
-              String usuario = textField.getText();
-              System.out.println("Usuario: " + usuario);
+public class App {
 
-              throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
-            }
-             
-              
-          });
+    public static void main(String[] args) {
+        criarJanela();
+    }
 
-          janela.add(botao);
-          janela.add(labelUsuario);
-          janela.add(textField);
-          janela.setLayout(null);
-          //Cria Janela
-          janela.setBounds(0 ,0, 400, 400);
-          janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-          janela.setVisible(true);
-        
+    private static void criarJanela() {
+        // Criação da janela
+        JFrame janela = new JFrame("Minha Primeira Janela");
+
+        // Componentes da interface
+        JLabel labelUsuario = new JLabel("Usuário:");
+        JTextField campoUsuario = new JTextField();
+        JButton botaoEnviar = new JButton("Clique aqui");
+        JLabel labelResultado = new JLabel("");
+
+        // Posicionamento dos componentes
+        labelUsuario.setBounds(50, 50, 100, 30);
+        campoUsuario.setBounds(150, 50, 180, 30);
+        botaoEnviar.setBounds(150, 100, 180, 30);
+        labelResultado.setBounds(150, 140, 180, 30);
+
+        // Ação do botão
+        botaoEnviar.addActionListener(e -> {
+            String usuario = campoUsuario.getText();
+            labelResultado.setText("Olá, " + usuario + "!");
+            System.out.println("Usuário: " + usuario);
+        });
+
+        // Adiciona os componentes na janela
+        janela.add(labelUsuario);
+        janela.add(campoUsuario);
+        janela.add(botaoEnviar);
+        janela.add(labelResultado);
+
+        // Configurações da janela
+        janela.setLayout(null);
+        janela.setSize(400, 250);
+        janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        janela.setLocationRelativeTo(null); // Centraliza a janela na tela
+        janela.setVisible(true);
     }
 }
