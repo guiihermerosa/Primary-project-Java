@@ -30,8 +30,13 @@ public class App {
         // Ação do botão
         botaoEnviar.addActionListener(e -> {
             String usuario = campoUsuario.getText();
-            labelResultado.setText("Olá, " + usuario + "!");
-            System.out.println("Usuário: " + usuario);
+             if (!usuario.isEmpty()) {
+                labelResultado.setText("Bem-vindo, " + usuario + "!");
+                // Abre a nova janela
+                new SegundaJanela(usuario);
+            } else {
+                labelResultado.setText("Digite seu nome!");
+            }
         });
 
         // Adiciona os componentes na janela
